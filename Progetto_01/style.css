@@ -1,0 +1,25 @@
+.text {
+    text-align: center;          
+    padding-top: 120px;         
+    height: 50vh;               
+    position: relative;          
+    background: url('img/background.jpeg') no-repeat center center/cover;
+    color: white;       
+}
+
+.text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 39, 39, 0.5); 
+}
+
+.text h1 {
+    position: relative;          
+    z-index: 2;
+    font-size: 4rem;
+    font-weight: 500;
+}

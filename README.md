@@ -1,4 +1,4 @@
-H# The Protagonists of Verismo
+# The Protagonists of Verismo
 
 ## Project Description
 This project is a **dynamic PHP website** dedicated to the main authors of **Italian Verismo**.  

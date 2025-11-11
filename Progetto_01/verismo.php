@@ -1,35 +1,71 @@
 <!DOCTYPE html>
 <html lang="it">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>VerismoLife</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VerismoLife</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
 
-    <body class="text-white" style="background-image: linear-gradient(to right top, #000000, #171315, #231f26, #2c2d38, #313d4a);font-family: 'Playfair Display', serif;">
+<body class="text-white" style="background-image: linear-gradient(to right top, #000000, #171315, #231f26, #2c2d38, #313d4a);font-family: 'Playfair Display', serif;">
 
-            <header class="position-relative" style="height:100vh;">
-                <div class="position-absolute bottom-0 start-0 h-75">
-                    <img src="img/background.png" style="height: 100%; width: auto; object-fit: cover; opacity: 0.6;">
+    <header class="position-relative" style= "height:100vh;">
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background-image: url('img/background.png'); background-size: cover; background-position: center;clip-path: polygon(0 8%, 91% 30%, 70% 80%, 0 78%);background-position: bottom 5px;">
+      </div>
+
+        <nav class="navbar navbar-expand-lg fixed-top d-flex align-items-center"
+            style="height: 10vh;background-color: rgba(44, 45, 56, 0.8); width: 70%; margin: 2rem auto 0 auto; border-radius: 15px;">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" style="font-size: 3rem; padding-left: 1rem;" href="#">Verismolife</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="gap:20px;">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" style="font-size: 1.2rem" aria-current="page"
+                                href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" style="font-size: 1.2rem"
+                                href="#authors-section">Authors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" style="font-size: 1.2rem" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" style="font-size: 1.2rem" href="#">Contacts</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="position-absolute" style="z-index: 2; left: 40%; top: 50%; transform: translateY(-50%);">
-                    <h1 class="display-1 fw-bold text-white" style="font-size: 12rem; letter-spacing: -2px;font-family: 'Playfair Display', serif;">VerismoLife</h1>
-                </div>
-            </header>
+            </div>
+        </nav>
 
-        <div class="container my-5">
+        <div class="position-absolute bottom-0 start-0 h-75">
 
-            <p class="lead fw-bold" style="font-size: 3rem;font-family: 'Playfair Display', serif; letter-spacing: 0.5px;">I grandi del Verismo</p>
-            <p class="lead fw-normal" style="font-size: 1.2em;font-family: 'Playfair Display', serif; letter-spacing: 0.5px;">Scopri di più sui principali autori del movimento verista italiano.</p>
-            <hr style="border:0; border-top:1px solid rgba(255, 255, 255, 1); margin: 2rem 0;">
         </div>
+    </header>
 
-        <div class="container my-0">
-            <?php
+    <div class="container my-5">
+
+        <p class="lead fw-bold" style="font-size: 3rem; font-family: 'Playfair Display', serif; letter-spacing: 0.5px;"
+            id="authors-section">I grandi del Verismo</p>
+        <p class="lead fw-normal"
+            style="font-size: 1.2em;font-family: 'Playfair Display', serif; letter-spacing: 0.5px;">Scopri di più sui
+            principali autori del movimento verista italiano.</p>
+        <hr style="border:0; border-top:1px solid rgba(255, 255, 255, 1); margin: 2rem 0;">
+    </div>
+
+    <div class="container my-0">
+        <?php
             $authors = array(
                 [
                     "name" => "Giovanni Verga (1840-1922)",
@@ -64,20 +100,24 @@
             );
 
             foreach ($authors as $author): ?>
-                <div class="d-flex flex-column align-items-center mb-5">
-                    <img src="<?php echo $author['image']; ?>" class="rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;" alt="<?php echo $author['name']; ?>">
-                    <h3 class="text-center" style="font-family: 'Playfair Display', serif;"><?php echo $author['name'];  ?></h3>
-                    <p class="text-center mx-auto" style="max-width: 800px;font-family: 'Playfair Display', serif; font-weight: 400;line-height: 1.8;"><?php echo $author['bio']; ?></p>
-                    <div class="text-center text-white-50">
-                        <strong>Opere principali:</strong>
-                        <ul class="list-unstyled">
-                            <?php foreach ($author['opere'] as $opera): ?>
-                                <li><?php echo $opera; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    <hr style="border:0; border-top:1px solid rgba(255, 255, 255, 1);">
-                </div>
+        <div class="d-flex flex-column align-items-center mb-5">
+            <img src="<?php echo $author['image']; ?>" class="rounded-circle mb-3"
+                style="width: 200px; height: 200px; object-fit: cover;" alt="<?php echo $author['name']; ?>">
+            <h3 class="text-center" style="font-family: 'Playfair Display', serif;"><?php echo $author['name'];  ?></h3>
+            <p class="text-center mx-auto"
+                style="max-width: 800px;font-family: 'Playfair Display', serif; font-weight: 400;line-height: 1.8;">
+                <?php echo $author['bio']; ?></p>
+            <div class="text-center text-white-50">
+                <strong>Opere principali:</strong>
+                <ul class="list-unstyled">
+                    <?php foreach ($author['opere'] as $opera): ?>
+                    <li><?php echo $opera; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <hr style="border:0; border-top:1px solid rgba(255, 255, 255, 1);">
+            </div>
             <?php endforeach; ?>
         </div>
-    </body>
+</body>
+
 </html>

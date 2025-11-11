@@ -4,6 +4,29 @@
     box-sizing: border-box;
     -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;  
+    -ms-user-select: none;
     user-select: none;
 }
+
+.display-1 {
+    font-size: 12rem;
+}
+
+@media (max-width: 1800px) {
+    .display-1 {
+        font-size: 8rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .display-1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-1 {
+        font-size: 2.5rem;
+    }
+}
+
